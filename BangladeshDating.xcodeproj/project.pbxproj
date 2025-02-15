@@ -16,6 +16,7 @@
 		80927E9E2D4FDE4900B33DC3 /* HomeBottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927E9D2D4FDE4900B33DC3 /* HomeBottomControlsStackView.swift */; };
 		80927EA02D4FF11400B33DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80927E9F2D4FF11400B33DC3 /* Assets.xcassets */; };
 		80927EA22D4FF31900B33DC3 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927EA12D4FF31900B33DC3 /* TopNavigationStackView.swift */; };
+		80927EA42D4FFA6700B33DC3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927EA32D4FFA6700B33DC3 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		80927E9D2D4FDE4900B33DC3 /* HomeBottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsStackView.swift; sourceTree = "<group>"; };
 		80927E9F2D4FF11400B33DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../random projects/Tinder-Firestore-Clone-iOS/Tinder-iOS-Clone/Assets.xcassets"; sourceTree = "<group>"; };
 		80927EA12D4FF31900B33DC3 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
+		80927EA32D4FFA6700B33DC3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				80927E9D2D4FDE4900B33DC3 /* HomeBottomControlsStackView.swift */,
 				80927EA12D4FF31900B33DC3 /* TopNavigationStackView.swift */,
+				80927EA32D4FFA6700B33DC3 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80927EA42D4FFA6700B33DC3 /* CardView.swift in Sources */,
 				80927E8B2D4FC65000B33DC3 /* ViewController.swift in Sources */,
 				80927E872D4FC65000B33DC3 /* AppDelegate.swift in Sources */,
 				80927E9E2D4FDE4900B33DC3 /* HomeBottomControlsStackView.swift in Sources */,
