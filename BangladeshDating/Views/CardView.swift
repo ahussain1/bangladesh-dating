@@ -8,7 +8,10 @@ import UIKit
 
 class CardView: UIStackView {
 
-    fileprivate let imageView = UIImageView(image: UIImage(named:"jane1.png"))
+    let imageView = UIImageView(image: UIImage(named: "jane1.png"))
+
+    let informationLabel =  UILabel()
+
     fileprivate let threshold: CGFloat = 100
 
     override init(frame: CGRect) {
@@ -19,6 +22,11 @@ class CardView: UIStackView {
         imageView.contentMode = .scaleAspectFill
         addSubview(imageView)
         imageView.fillSuperview()
+        addSubview(informationLabel)
+        informationLabel.anchor(top: nil, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 16))
+        informationLabel.text = "Test name test name"
+        informationLabel.textColor = .white
+        informationLabel.font = UIFont.systemFont(ofSize: 34, weight: .heavy)
 
         let panGesture  = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(panGesture)
@@ -46,18 +54,22 @@ class CardView: UIStackView {
     }
 
     fileprivate func handleEnded(_ gesture: UIPanGestureRecognizer) {
-        let shouldDismissCard = gesture.translation(in: nil).x > threshold
+        let translation = gesture.translation(in: self.superview)
+        let shouldDismissCard = abs(gesture.translation(in: nil).x) > threshold
 
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseOut, animations: {
             if shouldDismissCard {
-                self.frame = CGRect(x: 1000, y: 0, width: self.frame.width, height: self.frame.height)
+                let screenWidth = UIScreen.main.bounds.width
+                let translationDirection: CGFloat = translation.x > 0 ? 1 : -1
+                self.frame = CGRect(x: translationDirection * (screenWidth + self.frame.width), y: 0, width: self.frame.width, height: self.frame.height)
             } else {
                 self.transform = .identity
             }
 
         }) { (_ ) in
             self.transform = .identity
-            self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
+            self.removeFromSuperview()
+//            self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
         }
     }
 

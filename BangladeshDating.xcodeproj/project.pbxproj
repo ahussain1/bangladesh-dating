@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		80927E872D4FC65000B33DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927E862D4FC65000B33DC3 /* AppDelegate.swift */; };
 		80927E892D4FC65000B33DC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927E882D4FC65000B33DC3 /* SceneDelegate.swift */; };
-		80927E8B2D4FC65000B33DC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927E8A2D4FC65000B33DC3 /* ViewController.swift */; };
+		80927E8B2D4FC65000B33DC3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927E8A2D4FC65000B33DC3 /* HomeController.swift */; };
 		80927E8E2D4FC65000B33DC3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 80927E8D2D4FC65000B33DC3 /* Base */; };
 		80927E932D4FC65100B33DC3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 80927E922D4FC65100B33DC3 /* Base */; };
 		80927E9B2D4FC9C600B33DC3 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927E9A2D4FC9C600B33DC3 /* Extensions+UIView.swift */; };
@@ -17,13 +17,14 @@
 		80927EA02D4FF11400B33DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80927E9F2D4FF11400B33DC3 /* Assets.xcassets */; };
 		80927EA22D4FF31900B33DC3 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927EA12D4FF31900B33DC3 /* TopNavigationStackView.swift */; };
 		80927EA42D4FFA6700B33DC3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927EA32D4FFA6700B33DC3 /* CardView.swift */; };
+		80971FFE2D619EF100D6AA80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80971FFD2D619EEB00D6AA80 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		80927E832D4FC65000B33DC3 /* BangladeshDating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangladeshDating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80927E862D4FC65000B33DC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80927E882D4FC65000B33DC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80927E8A2D4FC65000B33DC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80927E8A2D4FC65000B33DC3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		80927E8D2D4FC65000B33DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80927E922D4FC65100B33DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80927E942D4FC65100B33DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		80927E9F2D4FF11400B33DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../random projects/Tinder-Firestore-Clone-iOS/Tinder-iOS-Clone/Assets.xcassets"; sourceTree = "<group>"; };
 		80927EA12D4FF31900B33DC3 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 		80927EA32D4FFA6700B33DC3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		80971FFD2D619EEB00D6AA80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +66,12 @@
 		80927E852D4FC65000B33DC3 /* BangladeshDating */ = {
 			isa = PBXGroup;
 			children = (
+				80971FFC2D619EE200D6AA80 /* Model */,
 				80927E9C2D4FDE1B00B33DC3 /* Views */,
 				80927E9A2D4FC9C600B33DC3 /* Extensions+UIView.swift */,
 				80927E862D4FC65000B33DC3 /* AppDelegate.swift */,
 				80927E882D4FC65000B33DC3 /* SceneDelegate.swift */,
-				80927E8A2D4FC65000B33DC3 /* ViewController.swift */,
+				80927E8A2D4FC65000B33DC3 /* HomeController.swift */,
 				80927E8C2D4FC65000B33DC3 /* Main.storyboard */,
 				80927E912D4FC65100B33DC3 /* LaunchScreen.storyboard */,
 				80927E942D4FC65100B33DC3 /* Info.plist */,
@@ -85,6 +88,14 @@
 				80927EA32D4FFA6700B33DC3 /* CardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		80971FFC2D619EE200D6AA80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80971FFD2D619EEB00D6AA80 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				80927EA42D4FFA6700B33DC3 /* CardView.swift in Sources */,
-				80927E8B2D4FC65000B33DC3 /* ViewController.swift in Sources */,
+				80927E8B2D4FC65000B33DC3 /* HomeController.swift in Sources */,
+				80971FFE2D619EF100D6AA80 /* User.swift in Sources */,
 				80927E872D4FC65000B33DC3 /* AppDelegate.swift in Sources */,
 				80927E9E2D4FDE4900B33DC3 /* HomeBottomControlsStackView.swift in Sources */,
 				80927EA22D4FF31900B33DC3 /* TopNavigationStackView.swift in Sources */,
