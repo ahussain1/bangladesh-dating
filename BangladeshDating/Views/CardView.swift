@@ -8,10 +8,16 @@ import UIKit
 
 class CardView: UIStackView {
 
-    let imageView = UIImageView(image: UIImage(named: "jane1.png"))
+    var cardViewModel: CardViewModel! {
+        didSet {
+            imageView.image = UIImage(named: cardViewModel.imageName)
+            informationLabel.attributedText = cardViewModel.attributedString
+            informationLabel.textAlignment = cardViewModel.textAlignment
+        }
+    }
 
-    let informationLabel =  UILabel()
-
+    fileprivate let imageView = UIImageView(image: #imageLiteral(resourceName: "top_right_messages"))
+    fileprivate let informationLabel =  UILabel()
     fileprivate let threshold: CGFloat = 100
 
     override init(frame: CGRect) {

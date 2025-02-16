@@ -2,8 +2,6 @@
 //  TopNavigationStackView.swift
 //  BangladeshDating
 //
-//  Created by Arif  on 2/2/25.
-//
 
 import UIKit
 

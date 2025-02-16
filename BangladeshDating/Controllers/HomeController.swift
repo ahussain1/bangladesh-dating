@@ -11,32 +11,27 @@ class HomeController: UIViewController {
     let buttonStackView = HomeBottomControlsStackView()
     let cardsDeckView = UIView() // Use a plain UIView instead of UIStackView
 
-//    let users = [
-//        User(name: "Kelly", age: 23, profession: "Student", imageName: "jane2"),
-//        User(name: "Jenna", age: 25, profession: "Student", imageName: "karen1"),
-//    ]
+    let cardViewModels: [CardViewModel] = {
+        let producers = [
+            User(name: "Kelly", age: 23, profession: "Student", imageName: "jane2"),
+            User(name: "Jenna", age: 25, profession: "Student", imageName: "karen1"),
+            Advertiser(title: "Slide Out Menu", brandName: "Apple Inc", posterPhotoName: "slide_out_menu_poster")
+        ] as [ProducesCardViewModel]
 
-    let cardViewModels = [
-        User(name: "Kelly", age: 23, profession: "Student", imageName: "jane2").toCardViewModel(),
-        User(name: "Jenna", age: 25, profession: "Student", imageName: "karen1").toCardViewModel(),
-//        CardViewModel(imageName: "jane2", attributedString: "Jenna 25\nStudent", textAlignment: .left)
-    ]
-
+        let viewModels = producers.map({ $0.toCardViewModel()})
+        return viewModels
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDummyCards()
         setupLayout()
-
     }
 
     fileprivate func setupDummyCards() {
         cardViewModels.forEach { (cardVM) in
             let cardView = CardView(frame: .zero)
-            cardView.imageView.image = UIImage(named: cardVM.imageName)
-            cardView.informationLabel.attributedText = cardVM.attributedString
-            cardView.informationLabel.textAlignment = cardVM.textAlignment
-            cardView.informationLabel.numberOfLines = 0
+            cardView.cardViewModel = cardVM
             cardsDeckView.addSubview(cardView)
             cardView.fillSuperview()
         }
@@ -53,7 +48,6 @@ class HomeController: UIViewController {
         overallStackView.axis = .vertical
         view.addSubview(overallStackView)
         overallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
-
         overallStackView.isLayoutMarginsRelativeArrangement = true
         overallStackView.layoutMargins = .init(top: 0, left: 12, bottom: 0, right: 12)
 

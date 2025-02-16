@@ -2,10 +2,14 @@
 //  CardViewModel.swift
 //  BangladeshDating
 //
-//  Created by Arif  on 2/16/25.
+//  Created on 2/16/25.
 //
 
 import UIKit
+
+protocol ProducesCardViewModel {
+    func toCardViewModel() -> CardViewModel
+}
 
 struct CardViewModel {
     // we'll define the properties that are view will
