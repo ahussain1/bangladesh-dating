@@ -11,32 +11,31 @@ class HomeController: UIViewController {
     let buttonStackView = HomeBottomControlsStackView()
     let cardsDeckView = UIView() // Use a plain UIView instead of UIStackView
 
-    let users = [
-        User(name: "Kelly", age: 23, profession: "Student", imageName: "jane2"),
-        User(name: "Jenna", age: 25, profession: "Student", imageName: "karen1"),
-        ]
+//    let users = [
+//        User(name: "Kelly", age: 23, profession: "Student", imageName: "jane2"),
+//        User(name: "Jenna", age: 25, profession: "Student", imageName: "karen1"),
+//    ]
+
+    let cardViewModels = [
+        User(name: "Kelly", age: 23, profession: "Student", imageName: "jane2").toCardViewModel(),
+        User(name: "Jenna", age: 25, profession: "Student", imageName: "karen1").toCardViewModel(),
+//        CardViewModel(imageName: "jane2", attributedString: "Jenna 25\nStudent", textAlignment: .left)
+    ]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupDummyCards()
         setupLayout()
+
     }
 
     fileprivate func setupDummyCards() {
-        users.forEach { (user) in
+        cardViewModels.forEach { (cardVM) in
             let cardView = CardView(frame: .zero)
-            cardView.imageView.image = UIImage(named: user.imageName)
-            cardView.informationLabel.text = "\(user.name) \(user.age)\n\(user.profession)"
-
-            let attributedText = NSMutableAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
-            attributedText.append(NSAttributedString(string: "  \(user.age)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .light)]))
-
-            attributedText.append(NSAttributedString(string: "\n\(user.profession)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-
-
-            cardView.informationLabel.attributedText = attributedText
-
+            cardView.imageView.image = UIImage(named: cardVM.imageName)
+            cardView.informationLabel.attributedText = cardVM.attributedString
+            cardView.informationLabel.textAlignment = cardVM.textAlignment
             cardView.informationLabel.numberOfLines = 0
             cardsDeckView.addSubview(cardView)
             cardView.fillSuperview()

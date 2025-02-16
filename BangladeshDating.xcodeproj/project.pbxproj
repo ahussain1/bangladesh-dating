@@ -18,6 +18,7 @@
 		80927EA22D4FF31900B33DC3 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927EA12D4FF31900B33DC3 /* TopNavigationStackView.swift */; };
 		80927EA42D4FFA6700B33DC3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80927EA32D4FFA6700B33DC3 /* CardView.swift */; };
 		80971FFE2D619EF100D6AA80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80971FFD2D619EEB00D6AA80 /* User.swift */; };
+		809720022D62441700D6AA80 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809720012D62441700D6AA80 /* CardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		80927EA12D4FF31900B33DC3 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 		80927EA32D4FFA6700B33DC3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		80971FFD2D619EEB00D6AA80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		809720012D62441700D6AA80 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +68,13 @@
 		80927E852D4FC65000B33DC3 /* BangladeshDating */ = {
 			isa = PBXGroup;
 			children = (
+				809720002D62440A00D6AA80 /* ViewModels */,
 				80971FFC2D619EE200D6AA80 /* Model */,
 				80927E9C2D4FDE1B00B33DC3 /* Views */,
+				80971FFF2D62437800D6AA80 /* Controllers */,
 				80927E9A2D4FC9C600B33DC3 /* Extensions+UIView.swift */,
 				80927E862D4FC65000B33DC3 /* AppDelegate.swift */,
 				80927E882D4FC65000B33DC3 /* SceneDelegate.swift */,
-				80927E8A2D4FC65000B33DC3 /* HomeController.swift */,
 				80927E8C2D4FC65000B33DC3 /* Main.storyboard */,
 				80927E912D4FC65100B33DC3 /* LaunchScreen.storyboard */,
 				80927E942D4FC65100B33DC3 /* Info.plist */,
@@ -96,6 +99,22 @@
 				80971FFD2D619EEB00D6AA80 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		80971FFF2D62437800D6AA80 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80927E8A2D4FC65000B33DC3 /* HomeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		809720002D62440A00D6AA80 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				809720012D62441700D6AA80 /* CardViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +196,7 @@
 				80927EA22D4FF31900B33DC3 /* TopNavigationStackView.swift in Sources */,
 				80927E9B2D4FC9C600B33DC3 /* Extensions+UIView.swift in Sources */,
 				80927E892D4FC65000B33DC3 /* SceneDelegate.swift in Sources */,
+				809720022D62441700D6AA80 /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
