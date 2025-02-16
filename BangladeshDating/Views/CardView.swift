@@ -28,6 +28,9 @@ class CardView: UIStackView {
         imageView.contentMode = .scaleAspectFill
         addSubview(imageView)
         imageView.fillSuperview()
+
+        setupGradientLayer()
+
         addSubview(informationLabel)
         informationLabel.anchor(top: nil, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 16))
         informationLabel.text = "Test name test name"
@@ -36,10 +39,29 @@ class CardView: UIStackView {
 
         let panGesture  = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(panGesture)
+
+    }
+
+    let gradientLayer = CAGradientLayer()
+
+    fileprivate func setupGradientLayer() {
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.5, 1.1]
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: 300, height: 400)
+        layer.addSublayer(gradientLayer)
+    }
+
+    override func layoutSubviews() {
+        // in here you know what the CardView frame will be
+        gradientLayer.frame = self.frame
     }
 
     @objc fileprivate func handlePan(_ gesture: UIPanGestureRecognizer) {
         switch gesture.state {
+        case .began:
+            superview?.subviews.forEach({ (subview) in
+                subview.layer.removeAllAnimations()
+            })
         case .changed:
             handleChanged(gesture)
         case .ended:
@@ -68,6 +90,7 @@ class CardView: UIStackView {
                 let screenWidth = UIScreen.main.bounds.width
                 let translationDirection: CGFloat = translation.x > 0 ? 1 : -1
                 self.frame = CGRect(x: translationDirection * (screenWidth + self.frame.width), y: 0, width: self.frame.width, height: self.frame.height)
+                self.superview?.subviews.last?.layer.removeAllAnimations()
             } else {
                 self.transform = .identity
             }
